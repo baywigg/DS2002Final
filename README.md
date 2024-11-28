@@ -14,7 +14,9 @@ If not, install it from the official Python website.
 
 `source venv/bin/activate`
 
-**Install required packages**
+**Install required packages after ensuring pip is updated**
+
+`pip install --upgrade pip`
 
 `pip install -r requirements.txt`
 
