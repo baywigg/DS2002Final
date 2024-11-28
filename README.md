@@ -1,6 +1,6 @@
 # DS2002 ETL Pipeline
 
-**First, ensure you have Python 3.11 installed**
+**First, open a terminal and ensure you have Python 3.11 installed**
 
 `python3 --version`
 
@@ -33,3 +33,7 @@ DB_HOST="localhost"
 ```
 
 **Finally, ensure your MySQL instance is running by navigating to the MySQL Workbench and attempting to connect.**
+
+## After all this is complete, you can run the ETL Pipeline with
+
+`python3 ETLPipeline/main.py`
