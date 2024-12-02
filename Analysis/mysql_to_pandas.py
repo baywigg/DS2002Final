@@ -11,8 +11,11 @@ user = os.getenv("DB_USER")
 password = os.getenv("DB_PASSWORD")
 host = os.getenv("DB_HOST")
 
-def get_dataframe_from_mysql(table, database):
-    return pd.read_sql(sql=f"SELECT * FROM {table}", con=create_connection(database))
+gcp_password = os.getenv("GCP_PASS")
+gcp_host = os.getenv("GCP_IP")
 
-def create_connection(database):
-    return create_engine(f"mysql+pymysql://{user}:{quote(password)}@{host}/{database}")
+def get_dataframe_from_mysql(table, database, local=True):
+    return pd.read_sql(sql=f"SELECT * FROM {table}", con=create_connection(database, local))
+
+def create_connection(database, local):
+    return create_engine(f"mysql+pymysql://{user}:{quote(password)}@{host}/{database}") if local else create_engine(f"mysql+mysqlconnector://{user}:{gcp_password}@{gcp_host}/{database}")

@@ -26,12 +26,15 @@ If not, install it from the official Python website.
 
 `touch .env`
 
-**Add these three values to the newly created '.env' file, with your MySQL credentials in place of <YOUR_PASSWORD>**
+**Add these three values to the newly created '.env' file, with your MySQL credentials in place of <YOUR_PASSWORD>, and GCP information in place of the two GCP variables**
 
 ```
 DB_USER="root"
 DB_PASSWORD="<YOUR_PASSWORD>"
 DB_HOST="localhost"
+
+GCP_IP="<GCP_IP>"
+GCP_PASS="<GCP_PASS>"
 ```
 
 **Finally, ensure your MySQL instance is running by navigating to the MySQL Workbench and attempting to connect.**
